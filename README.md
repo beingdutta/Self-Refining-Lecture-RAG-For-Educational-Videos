@@ -1,10 +1,11 @@
 # 🎓 Lecture-RAG for Educational Videos  
 ### Grounded Video Question Answering with Self-Refinement
 
+<img width="1920" height="791" alt="Lecture-RAG" src="https://github.com/user-attachments/assets/bd056db0-e447-4fd9-8f5f-e65339268847" />
+
 > **TL;DR**  
 > Lecture videos (slides + blackboard + face cam) break standard Video-LLMs.  
 > Lecture-RAG is a grounding-aware Video-RAG framework that reduces hallucinations and supports algorithmic reasoning in educational videos.
-
 ---
 
 ## 🚨 Motivation
