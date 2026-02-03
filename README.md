@@ -117,6 +117,7 @@ This enables explanation-based answers without hallucination.
 
 ## 🧠 Architecture Overview
 
+```text
 Video
 ├─ Uniform frame sampling (OCR-oriented)
 ├─ OCR extraction
@@ -126,67 +127,57 @@ Video
 └─ Iterative Self-Refinement
 ↓
 Final Grounded Answer
-
-
-
+```
 ---
 
 ## 📁 Repository Structure
 
+```text
 LectureRAG/
-├── framework.py # Main pipeline (OCR + retrieval + refinement)
-├── hybrid_search.py # Query-aware OCR retrieval
-├── run_ocr.py # OCR execution script
-├── nanonetOCR.py # OCR wrapper
-├── self_refine_framework_llavaNext.py # LLaVA-NeXT variant
-├── self_refine_framework_mPlugOwl.py # mPLUG-Owl variant
-├── self_refine_framework_qwen2_5.py # Qwen2.5-VL variant
-├── frameworkocr_*.pkl # Cached OCR outputs
-├── sampled_frames.jpeg # Example sampled frames
-├── samples/ # Sample lecture videos
+├── framework.py                        # Main pipeline (OCR + retrieval + refinement)
+├── hybrid_search.py                    # Query-aware OCR retrieval
+├── run_ocr.py                          # OCR execution script
+├── nanonetOCR.py                       # OCR wrapper
+├── self_refine_framework_llavaNext.py  # LLaVA-NeXT variant
+├── self_refine_framework_mPlugOwl.py   # mPLUG-Owl variant
+├── self_refine_framework_qwen2_5.py    # Qwen2.5-VL variant
+├── frameworkocr_*.pkl                  # Cached OCR outputs
+├── sampled_frames.jpeg                 # Example sampled frames
+├── samples/                            # Sample lecture videos
 ├── README.md
-
+```
 ---
 
 ## 🚀 How to Run
 
 ```bash
 python self_refine_framework_qwen2_5.py
+```
 
+### Requirements
 
-Requirements
+*   GPU compatible with Qwen2.5-VL / LLaVA-NeXT / mPLUG-Owl
+*   Python ≥ 3.9
+*   transformers, torch, decord, opencv
+*   NanoNet OCR (or compatible OCR backend)
 
-GPU compatible with Qwen2.5-VL / LLaVA-NeXT / mPLUG-Owl
-
-Python ≥ 3.9
-
-transformers, torch, decord, opencv
-
-NanoNet OCR (or compatible OCR backend)
-
-📚 Inspiration & Related Work
+## 📚 Inspiration & Related Work
 
 This project is inspired by:
 
-SELF-REFINE: Iterative Refinement with Self-Feedback, NeurIPS 2023
-
-Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension, NeurIPS 2025
+*   **SELF-REFINE**: Iterative Refinement with Self-Feedback, NeurIPS 2023
+*   **Video-RAG**: Visually-aligned Retrieval-Augmented Long Video Comprehension, NeurIPS 2025
 
 Lecture-RAG adapts these ideas to the educational video domain, introducing grounding-aware refinement and OCR-centric retrieval.
 
+## 🔮 Future Work
 
-🔮 Future Work
+*   🔊 Automatic Speech Recognition (ASR) integration
+*   🎯 Fully query-aware frame sampling
+*   📊 Evaluation on educational video QA benchmarks
+*   🧠 Temporal reasoning across slide transitions
 
-🔊 Automatic Speech Recognition (ASR) integration
-
-🎯 Fully query-aware frame sampling
-
-📊 Evaluation on educational video QA benchmarks
-
-🧠 Temporal reasoning across slide transitions
-
-
-📌 Takeaway
+## 📌 Takeaway
 
 Lecture videos are not just another video domain.
 They require OCR-aware grounding, step-based reasoning, and careful self-refinement.
